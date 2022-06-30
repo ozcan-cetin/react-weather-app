@@ -1,8 +1,17 @@
+import { useState } from "react";
+
 const Main = () => {
+    const [searchText, setSearchText] = useState("")
+    const handleChange = (e) => {
+        setSearchText(e.target.value);
+        // console.log(searchText);
+    }
+    // console.log(searchText);
+    
     return (
       <section className="main">
         <form>
-          <input type="text" placeholder="Search for a city" autofocus />
+          <input onChange={handleChange} type="text" placeholder="Search for a city" autoFocus />
           <button type="submit">SUBMIT</button>
           <span className="msg"></span>
         </form>
